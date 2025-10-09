@@ -1,6 +1,7 @@
 import unittest
 from Calc import Calculator  # The class we are going to implement
 
+
 class TestCalculator(unittest.TestCase):
     def test_add(self):
         calc = Calculator()
@@ -24,7 +25,6 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             calc.divide(5, 0)
         self.assertEqual(str(context.exception), "Cannot divide by zero")
-
 
 
 if __name__ == "__main__":
