@@ -23,7 +23,7 @@ jobs:
         pip install pytest pytest-cov flake8
 
     - name: Run tests with coverage
-      run: pytest --cov=Calc test_calc.py
+      run: pytest --cov=Calc calc_test.py
 
     - name: Run static analysis
-      run: flake8 Calc.py test_calc.py
+      run: flake8 Calc.py calc_test.py
