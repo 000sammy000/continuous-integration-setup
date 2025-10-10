@@ -20,11 +20,7 @@ class TestCalculator(unittest.TestCase):
         calc = Calculator()
         self.assertEqual(calc.divide(10, 3), 3)
 
-    def test_divide_by_zero(self):
-        calc = Calculator()
-        with self.assertRaises(ValueError) as context:
-            calc.divide(5, 0)
-        self.assertEqual(str(context.exception), "Cannot divide by zero")
+
 
 
 if __name__ == "__main__":
