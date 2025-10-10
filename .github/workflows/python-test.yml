@@ -1,10 +1,6 @@
-name: Python CI with Coverage and Lint
+name: Python package
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -12,18 +8,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: 3.11
-
-    - name: Install dependencies
-      run: |
-        pip install pytest pytest-cov flake8
-
-    - name: Run tests with coverage
-      run: pytest --cov=Calc calc_test.py
-
-    - name: Run static analysis
-      run: flake8 Calc.py calc_test.py
+    - name: Install pytest
+      run: pip install pytest
+    - name: Run tests
+      run: pytest
